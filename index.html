@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<head></head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    .w-900{width: 900px;}
+    </style>
+<body>
+<div class="container mt-5">
+<div class="alert alert-primary text-center" role="alert">
+<strong>JAVASCRIPT DOCUMENTATION</strong>
+</div>
+<div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="nav-link active text-start" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+            type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Variables</button>
+        <button class="nav-link text-start" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+            type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Operators</button>
+        <button class="nav-link text-start" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+            type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Data Types</button>
+        <button class="nav-link text-start" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+            type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Objects & Arrays</button>
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h3>var, let and const</h3>
+            <ul>
+                <li>We can redeclare the variable which is declared with <strong>var</strong>, but we can't redeclare the variable
+                    which is declared with <strong>let</strong> or <strong>const</strong>.</li>
+                <li>If we think the value of the variable might change, use <strong>let</strong>. <strong>const</strong> value can't
+                    be changed.</li>
+                <li><strong>var</strong> - redeclaring a variable inside a block will also redeclare the variable outside the block.
+                </li>
+                <li><strong>let</strong> - redeclaring a variable inside a block will not redeclare the variable outside the block.
+                </li>
+                <li><strong>const</strong> - value can't be reassigned or redeclared.</li><br>
+            </ul>
+            <h5>Example</h5>
+                <div class="row justify-content-start">
+                    <div class="col-6 bg-light border p-md-3">
+                        var x = "name";<br>
+                        <span class="text-muted">// Here x is name</span><br>
+                        
+                        {<br>
+                        var x = "firstName";<br>
+                        <span class="text-muted">// Here x is firstName</span><br>
+                        }<br>
+                        
+                        <span class="text-muted">// Here x is firstName</span><br>
+                        document.write(x);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <script>var x = "firstName";
+                            document.write(x);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        let x = 10;<br>
+                        <span class="text-muted">// Here y is 10</span><br>
+                        
+                        {<br>
+                        let x = 2;<br>
+                        <span class="text-muted">// Here y is 2</span><br>
+                        }<br>
+                        
+                        <span class="text-muted">// Here y is 10</span><br>
+                        document.write(y);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <script>
+                                let  y = 10;
+                                {
+                                    let y = 2;
+                                }
+                                document.write(y);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        <span class="text-muted">// You can create a constant array:</span><br>
+                        const cars = ["Saab", "Volvo", "BMW"];<br>
+                        
+                        <span class="text-muted">// You can change an element:</span><br>
+                        cars[0] = "Toyota";<br>
+                        
+                        <span class="text-muted">// You can add an element:</span><br>
+                        cars.push("Audi");<br>
+                        
+                        document.write(cars);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <script>
+                                const cars = ["Saab", "Volvo", "BMW"];
+                                cars[0] = "Toyota";
+                                cars.push("Audi");
+                            document.write(cars);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        <span class="text-muted">//But you can NOT reassign the array:</span><br>
+                        const cars1 = ["Saab", "Volvo", "BMW"];<br>
+                        
+                        cars1 = ["Toyota", "Volvo", "Audi"];<br>
+                
+                        document.write(cars1);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        //ERROR
+                        </script>
+                    </div>
+                </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <h3>JavaScript Arithmetic Operators</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Operator</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+ </td>
+                        <td>Addition</td>
+                    </tr>
+                    <tr>
+                        <td>- </td>
+                        <td>Subtraction</td>
+                    </tr>
+                    <tr>
+                        <td>* </td>
+                        <td>Multiplication</td>
+                    </tr>
+                    <tr>
+                        <td>**</td>
+                        <td>Exponentiation</td>
+                    </tr>
+                    <tr>
+                        <td>/ </td>
+                        <td>Division</td>
+                    </tr>
+                    <tr>
+                        <td>% </td>
+                        <td>Modulus</td>
+                    </tr>
+                    <tr>
+                        <td>++</td>
+                        <td>Increment</td>
+                    </tr>
+                    <tr>
+                        <td>--</td>
+                        <td>Decrement</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>JavaScript Assignment Operators</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Example</th>
+                        <th>Same As</th>
+                    </tr>
+                    <tr>
+                        <td>=
+                        <td>x = y
+                        <td>x = y</td>
+                    </tr>
+                    <tr>
+                        <td>+=</td>
+                        <td>x += y</td>
+                        <td>x = x + y</td>
+                    </tr>
+                    <tr>
+                        <td>-=</td>
+                        <td>x -= y</td>
+                        <td>x = x - y</td>
+                    </tr>
+                    <tr>
+                        <td>*=</td>
+                        <td>x *= y</td>
+                        <td>x = x * y</td>
+                    </tr>
+                    <tr>
+                        <td>/=</td>
+                        <td>x /= y</td>
+                        <td>x = x / y</td>
+                    </tr>
+                    <tr>
+                        <td>%=</td>
+                        <td>x %= y</td>
+                        <td>x = x % y</td>
+                    </tr>
+                    <tr>
+                        <td>**=</td>
+                        <td>x **= y</td>
+                        <td>x = x ** y</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <h3>JavaScript Data Types</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Data types</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>String </td>
+                        <td>Any texts within double quotes or single quotes</td>
+                    </tr>
+                    <tr>
+                        <td>Number </td>
+                        <td>Any numbers without double quots</td>
+                    </tr>
+                    <tr>
+                        <td>Booleans </td>
+                        <td>True or False</td>
+                    </tr>
+                    <tr>
+                        <td>Arrays</td>
+                        <td>Within square brackets</td>
+                    </tr>
+                    <tr>
+                        <td>Objects </td>
+                        <td>Within curly brackets</td>
+                    </tr>
+                    <tr>
+                        <td>Undefined </td>
+                        <td>A variable without a value, has the value undefined</td>
+                    </tr>
+                    <tr>
+                        <td>Empty values</td>
+                        <td>An empty value has nothing to do with undefined.<br>
+                        
+                        An empty string has both a legal value and a type(string).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Example</h5>
+                <div class="row justify-content-start">
+                    <div class="col-6 bg-light border p-md-3">
+                        <strong>String</strong><br>
+                        var sx = "name";<br>
+                        document.write(sx);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <script>var sx = "name";
+                            document.write(sx);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        <strong>Number</strong><br>
+                        var nx = 1;<br>
+                        document.write(nx);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <script>var nx = 1;
+                            document.write(nx);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        <strong>Booleans</strong><br>
+                        let bx = 5;<br>
+                        let by = 5;<br>
+                        let bz = 6;<br>
+                        document.getElementById("demo").innerHTML =<br>
+                        (bx == by) + "&lt;br&gt;" + (bx == bz);
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <p id="demo"></p>
+                        <script>
+                            let bx = 5;
+                                let by = 5;
+                                let bz = 6;
+                                document.getElementById("demo").innerHTML =
+                                    (bx == by) + "<br>" + (bx == bz);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        <strong>Arrays</strong><br>
+                        const fruits = ["apple", "orange", "grapes"];<br>
+                        document.write(fruits);<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <script>
+                            const fruits = ["apple", "orange", "grapes"];
+                                    document.write(fruits);
+                        </script>
+                    </div>
+                </div>
+                <div class="row justify-content-start mt-3">
+                    <div class="col-6 bg-light border p-md-3">
+                        <strong>Objects</strong><br>
+                        const person = {<br>
+                        firstName : "John",<br>
+                        lastName : "Doe",<br>
+                        age : 50,<br>
+                        eyeColor : "blue"<br>
+                        };<br>
+                        
+                        document.getElementById("objectdemo").innerHTML =<br>
+                        person.firstName + " is " + person.age + " years old.";<br>
+                    </div>
+                    <div class="col-6 border p-md-3">
+                        <p id="objectdemo"></p>
+                        <script>
+                            const person = {
+                                    firstName: "John",
+                                    lastName: "Doe",
+                                    age: 50,
+                                    eyeColor: "blue"
+                                };
+
+                                document.getElementById("objectdemo").innerHTML =
+                                    person.firstName + " is " + person.age + " years old.";
+                        </script>
+                    </div>
+                    <div class="row justify-content-start mt-3">
+                        <div class="col-6 bg-light border p-md-3">
+                            <strong>Undefined</strong><br>
+                            let ucar;
+                        </div>
+                        <div class="col-6 border p-md-3">
+                            // Value is undefined
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start mt-3">
+                        <div class="col-6 bg-light border p-md-3">
+                            <strong>Empty Values</strong><br>
+                            let ecar = ""; 
+                        </div>
+                        <div class="col-6 border p-md-3">
+                            // The value is ""
+                            </script>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            <h3>Objects</h3>
+                <ul>
+                <li>Objects are variables too. But it contain many values.</li>
+                <li>The values are written as pairs(name: value).</li>
+                <li>It is a common practice to declare objects with the const keyword.</li>
+                <li>JavaScript objects are containers for named values called properties.</li>
+                </ul>
+            <h3>Arrays</h3>
+            <p>An array is a special variable, which hold more than one value.</p>
+            <h6>Adding array elements:</h6>
+            <ul>
+                <li>We can add the new element(item) to an array using push() method.<br>
+                const fruits = ["Banana", "Orange", "Apple"];<br>
+                fruits.push("Lemon"); <span class="text-muted">// Adds a new element (Lemon) to fruits</span><br>
+                OUTPUT: Banana,Orange,Apple,Lemon<br>
+                </li>
+                <li>We can also use length property to add a new element.<br>
+                const fruits = ["Banana", "Orange", "Apple"];<br>
+                fruits[fruits.length] = "Lemon"; <span class="text-muted">// Adds "Lemon" to fruits</span><br>
+                OUTPUT: Banana,Orange,Apple,Lemon<br>
+                </li>
+            </ul>
+            <h3>Different between Objects and Arrays</h3>
+            <p>Arrays use numbered indexes. E.g. person[0]</p>
+            <p>Objects use named indexs. E.g. person["firstname"]</p>
+            <div class="row justify-content-start">
+                <div class="col-6 bg-light border p-md-3">
+                    var x = "name";<br>
+                    document.write(x);<br>
+                </div>
+                <div class="col-6 border p-md-3">
+                    <script>var x = "name";
+                        document.write(x);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+</html>
