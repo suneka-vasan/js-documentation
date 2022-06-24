@@ -631,6 +631,21 @@ OUTPUT: First number over 18 is 25
 
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>findIndex()</td>
+                                        <td>It returns the index of the first array element that passes a test function.<br>
+<pre><code class="language-html hljs language-xml">const numbers = [4, 9, 16, 25, 29];
+
+document.getElementById("demo").innerHTML = "First number over 18 has index " + numbers.findIndex(myFunction);
+
+function myFunction(value, index, array) {
+return value > 18;
+}
+                                    OUTPUT: First number over 18 has index 3
+                                    </code></pre>
+                                    
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
