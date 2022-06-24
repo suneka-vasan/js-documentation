@@ -27,6 +27,9 @@
                         <a class="nav-link" href="#item-3">Data Types</a>
                         <a class="nav-link" href="#item-4">Objects & Arrays</a>
                         <a class="nav-link" href="#item-5">Date</a>
+                        <a class="nav-link" href="#item-6">Booleans</a>
+                        <a class="nav-link" href="#item-7">Comparison</a>
+                        <a class="nav-link" href="#item-7">If Else</a>
                     </nav>
                 </nav>
             </div>
@@ -641,8 +644,8 @@ document.getElementById("demo").innerHTML = "First number over 18 has index " + 
 function myFunction(value, index, array) {
 return value > 18;
 }
-                                    OUTPUT: First number over 18 has index 3
-                                    </code></pre>
+OUTPUT: First number over 18 has index 3
+</code></pre>
                                     
                                         </td>
                                     </tr>
@@ -656,6 +659,164 @@ return value > 18;
                             new Date(year, month, day, hours, minutes, seconds, milliseconds)<br>
                             new Date(milliseconds)<br>
                             new Date(date string)<br>Note:Date objects are static. The computer time is ticking, but date objects are not.</p>
+                        </div>
+                        <div id="item-6">
+                            <h3>JavaScript Booleans</h3>
+                            <ul>
+                            <li>we can use the Boolean() function to find out if an expression (or a variable) is true.</li>
+                            <li>JavaScript has a Boolean data type. It can only take the values true or false.</li>
+<pre><code class="language-html hljs language-xml">document.getElementById("demo").innerHTML = Boolean(10 > 9);
+OUTPUT: true
+</code></pre>
+                            <li>Everything With a "Value" is True.</li>
+                            <li>Everything Without a "Value" is False</li>
+                            <ul>
+                                <li>The Boolean value of 0 (zero) is false</li>
+                                <li>The Boolean value of -0 (minus zero) is false.</li>
+                                <li>The Boolean value of "" (empty string) is false.</li>
+                                <li>The Boolean value of undefined is false.</li>
+                                <li>The Boolean value of null is false.</li>
+                                <li>The Boolean value of false is false.</li>
+                                <li>The Boolean value of NaN is false.</li>
+                            </ul>
+                            </ul>
+                        </div>
+                        <div id="item-7">
+                          <h3>JavaScript Comparison and Logical Operators</h3>  
+                          <p>Comparison and Logical operators are used to test for true or false.</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operator</th>
+                                    <th scope="col">Description</th>
+                                    <th>Comparing</th>
+                                    <th>Returns</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>==</td>
+                                    <td>equal to</td>
+                                    <td>x == 8<br>
+                                    x == 5 <br>
+                                    x == "5" </td>
+                                    <td>false<br>true<br>true</td>
+                                </tr>
+                                <tr>
+                                    <td>=== </td>
+                                    <td>equal value and equal type </td>
+                                    <td>x === 5<br>x === "5"</td>
+                                    <td>true<br>false</td>
+                                </tr>
+                                <tr>
+                                    <td>!= </td>
+                                    <td>not equal </td>
+                                    <td>x != 8 </td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>!==</td>
+                                    <td>not equal value or not equal type</td>
+                                    <td>x !== 5<br>
+                                        x !== "5" <br>
+                                        x !== 8 </td>
+                                    <td>false<br>true<br>true</td>
+                                </tr>
+                                <tr>
+                                    <td>></td>
+                                    <td>greater than</td>
+                                    <td>x > 8</td>
+                                    <td>false</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;</td>
+                                    <td>less than</td>
+                                    <td>x &lt; 8</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>>=</td>
+                                    <td>greater than or equal to</td>
+                                    <td>x >= 8</td>
+                                    <td>false</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;=</td>
+                                    <td>less than or equal to</td>
+                                    <td>x &lt;= 8</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>&&</td>
+                                    <td>and</td>
+                                    <td>(x &lt; 10 && y&gt; 1)</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>||</td>
+                                    <td>or</td>
+                                    <td>(x == 5 || y == 5)</td>
+                                    <td>false</td>
+                                </tr>
+                                <tr>
+                                    <td>!</td>
+                                    <td>not</td>
+                                    <td>!(x == y)</td>
+                                    <td>true</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div id="item-8">
+                            <h3>JavaScript if, else, and else if</h3>
+                            <p>Conditional statements are used to perform different actions based on different conditions.</p>
+                            <ul>
+                                <li>if - a block of code to be executed, if a specified condition is true</li>
+                                <li>else - a block of code to be executed, if the same condition is false</li>
+                                <li>else if - a new condition to test, if the first condition is false</li>
+                            </ul>
+<pre><code class="language-html hljs language-xml">if (condition1) {
+<span class="text-muted">// block of code to be executed if condition1 is true</span>
+} else if (condition2) {
+<span class="text-muted">// block of code to be executed if the condition1 is false and condition2 is true</span>
+} else {
+<span class="text-muted">// block of code to be executed if the condition1 is false and condition2 is false</span>
+}
+</code></pre>
+<h3>Switch Statement</h3>
+<p>The switch statement is used to perform different actions based on different conditions.<br>Use the switch statement to select one of many code blocks to be executed.</p>
+<pre><code class="language-html hljs language-xml">switch(expression) {
+case x:
+<span class="text-muted">// code block</span>
+break;
+case y:
+<span class="text-muted">// code block</span>
+break;
+default:
+<span class="text-muted">// code block</span>
+}
+</code></pre>
+<h6>The break Keyword</h6>
+<p>it breaks out of the switch block.</p>
+<h6>default Keyword</h6>
+<p>it specifies the code to run if there is no case match.</p>
+<pre><code class="language-html hljs language-xml">
+    let text;
+    switch (new Date().getDay()) {
+    case 4:
+    case 5:
+    text = "Soon it is Weekend";
+    break;
+    case 0:
+    case 6:
+    text = "It is Weekend";
+    break;
+    default:
+    text = "Looking forward to the Weekend";
+    }
+    document.getElementById("demo").innerHTML = text;
+    OUTPUT: Soon it is Weekend
+</code></pre>
                         </div>
                     </div>
                 </div>
