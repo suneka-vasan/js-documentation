@@ -33,6 +33,7 @@
                         <a class="nav-link" href="#item-9">Loop</a>
                         <a class="nav-link" href="#item-10">Break</a>
                         <a class="nav-link" href="#item-11">Iterables</a>
+                        <a class="nav-link" href="#item-12">Sets</a>
                     </nav>
                 </nav>
             </div>
@@ -963,7 +964,173 @@ The number is 4
                           <p>Iterables are iterable objects (like Arrays).<br>
                         Iterables can be accessed with simple and efficient code.<br>
                         Iterables can be iterated over with for..of loops.<br>
-                        It means looping over a sequence of elements.</p>  
+                        It means looping over a sequence of elements.</p> 
+                        <h6>Iterating Over a String</h6> 
+<pre><code class="language-html hljs language-xml">
+<span class="text-muted">// Create a String</span>
+const name = "W3Schools";
+
+<span class="text-muted">// List all Elements</span>
+let text = ""
+for (const x of name) {
+text += x + "&lt;br&gt;";
+}
+
+document.getElementById("demo").innerHTML = text;
+
+OUTPUT:
+W
+3
+S
+c
+h
+o
+o
+l
+s
+</code></pre>
+<h6>Iterating Over an Array</h6>
+<pre><code class="language-html hljs language-xml">
+<span class="text-muted">// Create an Array</span>
+const letters = ["a","b","c"]; 
+
+<span class="text-muted">// List all Elements</span>
+let text = ""
+for (const x of letters) {
+text += x + "&lt;br&gt;";
+}
+
+document.getElementById("demo").innerHTML = text;
+
+OUTPUT:
+a
+b
+c
+</code></pre>
+<h6>Iterating Over an Set</h6>
+<pre><code class="language-html hljs language-xml">
+<span class="text-muted">// Create an Set</span>
+const letters = new Set([1,2,3]);
+
+<span class="text-muted">// List all Elements</span>
+let text = ""
+for (const x of letters) {
+text += x + "&lt;br&gt;";
+}
+
+document.getElementById("demo").innerHTML = text;
+
+OUTPUT:
+1
+2
+3
+</code></pre>
+<h6>Iterating Over a Map</h6>
+<pre><code class="language-html hljs language-xml">
+<span class="text-muted">// Create an Map</span>
+const fruits = new Map([
+["apples", 500],
+["bananas", 300],
+["oranges", 200]
+]);
+<span class="text-muted">// List all entries</span>
+let text = ""
+for (const x of fruits) {
+text += x + "&lt;br&gt;";
+}
+
+document.getElementById("demo").innerHTML = text;
+
+OUTPUT:
+apples,500
+bananas,300
+oranges,200
+</code></pre>
+                        </div>
+                        <div id="item-12">
+                        <h3>JavaScript Sets</h3>
+                        <p>A JavaScript Set is a collection of unique values.<br>
+                        
+                        Each value can only occur once in a Set.</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Method</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>new Set()</td>
+                                    <td>Creates a new Set</td>
+                                </tr>
+                                <tr>
+                                    <td>add()</td>
+                                    <td>Adds a new element to the Set</td>
+                                </tr>
+                                <tr>
+                                    <td>delete()</td>
+                                    <td>Removes an element from a Set</td>
+                                </tr>
+                                <tr>
+                                    <td>has()</td>
+                                    <td>Returns true if a value exists in the Set</td>
+                                </tr>
+                                <tr>
+                                    <td>forEach()</td>
+                                    <td>Invokes a callback for each element in the Set</td>
+                                </tr>
+                                <tr>
+                                    <td>values()</td>
+                                    <td>Returns an iterator with all the values in a Set</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h5>How to Create a Set</h5>
+                        <p>You can create a JavaScript Set by:</p>
+                        <ul>
+                            <li>Passing an Array to new Set()</li>
+                            <li>Create a new Set and use add() to add values</li>
+                            <li>Create a new Set and use add() to add variables</li>
+                        </ul>
+                        <h5>new Set() Method</h5>
+<pre><code class="language-html hljs language-xml">
+<span class="text-muted">// Create a Set</span>
+const letters = new Set();
+
+<span class="text-muted">// Create Variables</span>
+const a = "a";
+const b = "b";
+const c = "c";
+
+<span class="text-muted">// Add the Variables to the Set</span>
+letters.add(a);
+letters.add(b);
+letters.add(c);
+
+<span class="text-muted">// Display set.size</span>
+document.getElementById("demo").innerHTML = letters.size;
+
+OUTPUT:
+3
+</code></pre>
+
+<h5>The add() Method</h5>
+<pre><code class="language-html hljs language-xml">
+<span class="text-muted">// Create a new Set</span>
+const letters = new Set(["a","b","c"]);
+
+<span class="text-muted">// Add a new Element</span>
+letters.add("d");
+letters.add("e");
+
+<span class="text-muted">// Display set.size</span>
+document.getElementById("demo").innerHTML = letters.size;
+
+OUTPUT:
+5
+</code></pre>
+<p>Note: If you add equal elements, only the first will be saved. </p>
                         </div>
                     </div>
                 </div>
