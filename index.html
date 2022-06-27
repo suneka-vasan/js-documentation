@@ -29,7 +29,10 @@
                         <a class="nav-link" href="#item-5">Date</a>
                         <a class="nav-link" href="#item-6">Booleans</a>
                         <a class="nav-link" href="#item-7">Comparison</a>
-                        <a class="nav-link" href="#item-7">If Else</a>
+                        <a class="nav-link" href="#item-8">If Else</a>
+                        <a class="nav-link" href="#item-9">Loop</a>
+                        <a class="nav-link" href="#item-10">Break</a>
+                        <a class="nav-link" href="#item-11">Iterables</a>
                     </nav>
                 </nav>
             </div>
@@ -801,22 +804,166 @@ default:
 <h6>default Keyword</h6>
 <p>it specifies the code to run if there is no case match.</p>
 <pre><code class="language-html hljs language-xml">
-    let text;
-    switch (new Date().getDay()) {
-    case 4:
-    case 5:
-    text = "Soon it is Weekend";
-    break;
-    case 0:
-    case 6:
-    text = "It is Weekend";
-    break;
-    default:
-    text = "Looking forward to the Weekend";
-    }
-    document.getElementById("demo").innerHTML = text;
-    OUTPUT: Soon it is Weekend
+let text;
+switch (new Date().getDay()) {
+case 4:
+case 5:
+text = "Soon it is Weekend";
+break;
+case 0:
+case 6:
+text = "It is Weekend";
+break;
+default:
+text = "Looking forward to the Weekend";
+}
+document.getElementById("demo").innerHTML = text;
+OUTPUT: Soon it is Weekend
 </code></pre>
+                        </div>
+                        <div id="item-9">
+                            <h3>JavaScript For Loop</h3>
+                            <p>Loops can execute a block of code a number of times.<br>
+                            Loops are handy, if you want to run the same code over and over again, each time with a different value.</p>
+<pre><code class="language-html hljs language-xml">
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+let text = "";
+for (let i = 0; i < cars.length; i++) { text +=cars[i] + "&lt;br&gt;" ; } 
+document.getElementById("demo").innerHTML=text;
+
+OUTPUT: 
+BMW
+Volvo
+Saab
+Ford
+Fiat
+Audi
+</code></pre>
+<h5>Different Kinds of Loops</h5>
+<ul>
+    <li>for - loops through a block of code a number of times</li>
+    <li>for/in - loops through the properties of an object</li>
+    <li>for/of - loops through the values of an iterable object</li>
+    <li>while - loops through a block of code while a specified condition is true</li>
+    <li>do/while - also loops through a block of code while a specified condition is true</li>
+</ul>
+<h6>JavaScript For In Loop</h6>
+<pre><code class="language-html hljs language-xml">
+const person = {fname:"John", lname:"Doe", age:25};
+
+let txt = "";
+for (let x in person) {
+txt += person[x] + " ";
+}
+
+document.getElementById("demo").innerHTML = txt;
+
+OUTPUT:John Doe 25
+</code></pre>
+<h6>forEach()</h6>
+<p>forEach() method calls a function (a callback function) once for each array element.</p>
+<pre><code class="language-html hljs language-xml">
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+txt += value + "&lt;br&gt;";
+}
+OUTPUT:
+45
+4
+9
+16
+25
+</code></pre>
+<h6>While Loop</h6>
+<p>while loop loops through a block of code as long as a specified condition is true.</p>
+<pre><code class="language-html hljs language-xml">
+let text = "";
+let i = 0;
+while (i < 10) { 
+    text +="&lt;br&gt;The number is " + i; 
+    i++; 
+} 
+document.getElementById("demo").innerHTML=text;
+
+OUTPUT:
+The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4
+The number is 5
+The number is 6
+The number is 7
+The number is 8
+The number is 9
+</code></pre>
+<h6>Do While Loop</h6>
+<p>do while loop is a variant of the while loop. This loop will execute the code block once, before checking if the
+condition is true, then it will repeat the loop as long as the condition is true.</p>
+<pre><code class="language-html hljs language-xml">
+let text = "";
+let i = 0;
+while (i < 5) { 
+    text +="&lt;br&gt;The number is " + i; 
+    i++; 
+} 
+document.getElementById("demo").innerHTML=text;
+
+OUTPUT:
+The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4
+</code></pre>
+                        </div>
+                        <div id="item-10">
+                            <h3>JavaScript Break and Continue</h3>
+                            <p>The break statement "jumps out" of a loop.<br>
+                            The continue statement "jumps over" one iteration in the loop.</p>
+<pre><code class="language-html hljs language-xml">
+let text = "";
+for (let i = 0; i < 10; i++) { 
+    if (i===3) { break; } 
+    text +="The number is " + i + "&lt;br&gt;" ; 
+}
+    document.getElementById("demo").innerHTML=text;
+
+OUTPUT:
+The number is 0
+The number is 1
+The number is 2
+</code></pre>
+<h6>The Continue Statement</h6>
+<p>continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next
+iteration in the loop.</p>
+<pre><code class="language-html hljs language-xml">
+let text = "";
+for (let i = 0; i < 5; i++) { 
+    if (i===3) { continue; } 
+    text +="The number is " + i + "&lt;br&gt;" ; 
+}
+    document.getElementById("demo").innerHTML=text;
+
+OUTPUT:
+The number is 0
+The number is 1
+The number is 2
+The number is 4
+</code></pre>
+                        </div>
+                        <div id="item-11">
+                          <h3>JavaScript Iterables</h3>
+                          <p>Iterables are iterable objects (like Arrays).<br>
+                        Iterables can be accessed with simple and efficient code.<br>
+                        Iterables can be iterated over with for..of loops.<br>
+                        It means looping over a sequence of elements.</p>  
                         </div>
                     </div>
                 </div>
