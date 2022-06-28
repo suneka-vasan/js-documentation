@@ -34,6 +34,10 @@
                         <a class="nav-link" href="#item-10">Break</a>
                         <a class="nav-link" href="#item-11">Iterables</a>
                         <a class="nav-link" href="#item-12">Sets</a>
+                        <a class="nav-link" href="#item-13">Maps</a>
+                        <a class="nav-link" href="#item-14">Typeof</a>
+                        <a class="nav-link" href="#item-15">Math</a>
+                        <a class="nav-link" href="#item-16">Random</a>
                     </nav>
                 </nav>
             </div>
@@ -62,84 +66,49 @@
                             <li><strong>const</strong> - value can't be reassigned or redeclared.</li><br>
                         </ul>
                         <h5>Example</h5>
-                        <div class="row justify-content-start">
-                            <div class="col-6 bg-light border p-md-3">
-                                var x = "name";<br>
-                                <span class="text-muted">// Here x is name</span><br>
+<pre><code class="language-js hljs language-xml"><script>var x = "name";
+// Here x is name
 
-                                {<br>
-                                var x = "firstName";<br>
-                                <span class="text-muted">// Here x is firstName</span><br>
-                                }<br>
+{
+var x = "firstName";
+// Here x is firstName
+}
 
-                                <span class="text-muted">// Here x is firstName</span><br>
-                                document.write(x);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <script>var x = "firstName";
-                                    document.write(x);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                let x = 10;<br>
-                                <span class="text-muted">// Here y is 10</span><br>
+// Here x is firstName
+document.write("OUTPUT: " +  x);
+</script>
+</code></pre>
+<pre><code class="language-js hljs language-xml"><script>let y = 10;
+// Here y is 10
+{
+let y = 2;
+// Here y is 2
+}
 
-                                {<br>
-                                let x = 2;<br>
-                                <span class="text-muted">// Here y is 2</span><br>
-                                }<br>
+// Here y is 10
+document.write("OUTPUT: " + y);
+</script>
+</code></pre>
+<pre><code class="language-js hljs language-xml"><script>// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+// You can change an element:
+cars[0] = "Toyota";
+// You can add an element:
+cars.push("Audi");
 
-                                <span class="text-muted">// Here y is 10</span><br>
-                                document.write(y);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <script>
-                                    let y = 10;
-                                    {
-                                        let y = 2;
-                                    }
-                                    document.write(y);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                <span class="text-muted">// You can create a constant array:</span><br>
-                                const cars = ["Saab", "Volvo", "BMW"];<br>
+document.write("OUTPUT: " + cars);
+</script>
+</code></pre>
+<pre><code class="language-js hljs language-xml"><script>//But you can NOT reassign the array:
+const cars1 = ["Saab", "Volvo", "BMW"]; 
 
-                                <span class="text-muted">// You can change an element:</span><br>
-                                cars[0] = "Toyota";<br>
+cars1 = ["Toyota", "Volvo", "Audi"];
 
-                                <span class="text-muted">// You can add an element:</span><br>
-                                cars.push("Audi");<br>
+document.write(cars1);
 
-                                document.write(cars);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <script>
-                                    const cars = ["Saab", "Volvo", "BMW"];
-                                    cars[0] = "Toyota";
-                                    cars.push("Audi");
-                                    document.write(cars);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                <span class="text-muted">//But you can NOT reassign the array:</span><br>
-                                const cars1 = ["Saab", "Volvo", "BMW"];<br>
-
-                                cars1 = ["Toyota", "Volvo", "Audi"];<br>
-
-                                document.write(cars1);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                //ERROR
-                                </script>
-                            </div>
-                        </div>
+//ERROR
+</script>
+</code></pre>
                     </div>
                     <div id="item-2">
                         <h3>JavaScript Arithmetic Operators</h3>
@@ -274,111 +243,45 @@
                             </tbody>
                         </table>
                         <h5>Example</h5>
-                        <div class="row justify-content-start">
-                            <div class="col-6 bg-light border p-md-3">
-                                <strong>String</strong><br>
-                                var sx = "name";<br>
-                                document.write(sx);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <script>var sx = "name";
-                                    document.write(sx);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                <strong>Number</strong><br>
-                                var nx = 1;<br>
-                                document.write(nx);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <script>var nx = 1;
-                                    document.write(nx);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                <strong>Booleans</strong><br>
-                                let bx = 5;<br>
-                                let by = 5;<br>
-                                let bz = 6;<br>
-                                document.getElementById("demo").innerHTML =<br>
-                                (bx == by) + "&lt;br&gt;" + (bx == bz);
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <p id="demo"></p>
-                                <script>
-                                    let bx = 5;
-                                    let by = 5;
-                                    let bz = 6;
-                                    document.getElementById("demo").innerHTML =
-                                        (bx == by) + "<br>" + (bx == bz);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                <strong>Arrays</strong><br>
-                                const fruits = ["apple", "orange", "grapes"];<br>
-                                document.write(fruits);<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <script>
-                                    const fruits = ["apple", "orange", "grapes"];
-                                    document.write(fruits);
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start mt-3">
-                            <div class="col-6 bg-light border p-md-3">
-                                <strong>Objects</strong><br>
-                                const person = {<br>
-                                firstName : "John",<br>
-                                lastName : "Doe",<br>
-                                age : 50,<br>
-                                eyeColor : "blue"<br>
-                                };<br>
+<pre><code class="language-js hljs language-xml"><script>//String
+var sx = "name";
+document.write("OUTPUT: " + sx);
+</script></code></pre>
+<pre><code class="language-js hljs language-xml"><script>//Number
+var nx = 1;
+document.write("OUTPUT: " + nx);
+</script></code></pre>
+<pre><code class="language-js hljs language-xml"><script>//Booleans
+let bx = 5;
+let by = 5;
+let bz = 6;
+document.write("OUTPUT: " +(bx == by) + " " + (bx == bz));
+</script>
+</code></pre>
+<pre><code class="language-js hljs language-xml"><script>//Arrays
+const fruits = ["apple", "orange", "grapes"];
+document.write("OUTPUT: " + fruits);
+</script>
+</code></pre>
+<pre><code class="language-js hljs language-xml"><script>//Objects
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
 
-                                document.getElementById("objectdemo").innerHTML =<br>
-                                person.firstName + " is " + person.age + " years old.";<br>
-                            </div>
-                            <div class="col-6 border p-md-3">
-                                <p id="objectdemo"></p>
-                                <script>
-                                    const person = {
-                                        firstName: "John",
-                                        lastName: "Doe",
-                                        age: 50,
-                                        eyeColor: "blue"
-                                    };
-
-                                    document.getElementById("objectdemo").innerHTML =
-                                        person.firstName + " is " + person.age + " years old.";
-                                </script>
-                            </div>
-                            </div>
-                            <div class="row justify-content-start mt-3">
-                                <div class="col-6 bg-light border p-md-3">
-                                    <strong>Undefined</strong><br>
-                                    let ucar;
-                                </div>
-                                <div class="col-6 border p-md-3">
-                                    // Value is undefined
-                                    </script>
-                                </div>
-                            </div>
-                            <div class="row justify-content-start mt-3">
-                                <div class="col-6 bg-light border p-md-3">
-                                    <strong>Empty Values</strong><br>
-                                    let ecar = "";
-                                </div>
-                                <div class="col-6 border p-md-3">
-                                    // The value is ""
-                                    </script>
-                                </div>
-                            </div>
+document.write("OUTPUT: " + person.firstName + " is " + person.age + " years old.");
+</script>
+</code></pre>
+<pre><code class="language-js hljs language-xml"><script>//Undefined
+var ucar;
+// Value is undefined
+</script></code></pre>
+<pre><code class="language-js hljs language-xml"><script>//Empty Values
+let ecar = "";
+// The value is ""
+</script></code></pre>
                         </div>
                         <div id="item-4">
                             <h3>Objects</h3>
@@ -387,18 +290,18 @@
                                 <li>The values are written as pairs(name: value).</li>
                                 <li>It is a common practice to declare objects with the const keyword.</li>
                                 <li>JavaScript objects are containers for named values called properties.</li></ul>
-<pre><code class="language-html hljs language-xml">const person = {firstName:"John", lastName:"Doe", age:46};
+<pre><code class="language-js hljs language-xml">const person = {firstName:"John", lastName:"Doe", age:46};
 <span class="text-muted">//Objects use names to access its "members". In this example, person.firstName returns John</span>
 </code></pre>
                             
                             <h3>Arrays</h3>
                             <p>An array is a special variable, which hold more than one value.</p>
-<pre><code class="language-html hljs language-xml">const person = ["John", "Doe", 46];
+<pre><code class="language-js hljs language-xml">const person = ["John", "Doe", 46];
 <span class="text-muted">//Arrays use numbers to access its "elements". In this example, person[0] returns John</span>
 </code></pre>
 <h6>Looping array elements:</h6>
 <p>If we've 10 items in an Array, we can loop the array to listout all the 10items in an Array(using for loop and for each loop).</p>
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 let text = "&lt;ul&gt;";
     fruits.forEach(myFunction);
@@ -417,14 +320,14 @@ OUTPUT: <ul>
                             <h6>Adding array elements:</h6>
                             <ul>
                                 <li>We can add the new element(item) to an array using push() method.
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Apple"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Apple"];
 fruits.push("Lemon"); 
 <span class="text-muted">// Adds a new element (Lemon) to fruits</span>
 OUTPUT: Banana,Orange,Apple,Lemon
 </code></pre>
                                 </li>
                                 <li>We can also use length property to add a new element.
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Apple"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Apple"];
 fruits.push("Lemon"); 
 <span class="text-muted">// Adds a new element (Lemon) to fruits</span>
 OUTPUT: Banana,Orange,Apple,Lemon
@@ -466,7 +369,7 @@ OUTPUT: Banana,Orange,Apple,Lemon
                                     <tr>
                                         <td>splice()</td>
                                         <td>adds a new elements to an array(more than 1).
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 0, "Lemon", "Kiwi");
 <span class="text-muted">//above 2 defines where new element should be added. 0 defines how many elements should be removed. Lemon, Kiwi defines the new element to be added.</span>
 OUTPUT: Banana,Orange,Lemon,Kiwi,Apple,Mango
@@ -476,7 +379,7 @@ OUTPUT: Banana,Orange,Lemon,Kiwi,Apple,Mango
                                         <td>slice()</td>
                                         <td>slices out a piece of an array into a new array.<br>The slice() method creates a new array.<br>
                                         The slice() method does not remove any elements from the source array.
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 const citrus = fruits.slice(2);
 document.getElementById("demo").innerHTML = fruits + "&lt;br&gt;" + citrus;
 OUTPUT:<br>Banana,Orange,Lemon,Apple,Mango<br>Lemon,Apple,Mango</code></pre>
@@ -486,7 +389,7 @@ OUTPUT:<br>Banana,Orange,Lemon,Apple,Mango<br>Lemon,Apple,Mango</code></pre>
                                         <td>delete()</td>
                                         <td>Array elements can be deleted using the JavaScript operator delete.<br>Using delete leaves undefined holes in the array.<br>
                                         Use pop() or shift() instead.
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
 delete fruits[0];
 document.getElementById("deletedemo").innerHTML = "The first fruit is: " + fruits[0];
 OUTPUT: The first fruit is: undefined
@@ -496,7 +399,7 @@ OUTPUT: The first fruit is: undefined
                                     <tr>
                                         <td>concat()</td>
                                         <td>reates a new array by merging (concatenating) existing arrays.<br>The concat() method does not change the existing arrays. It always returns a new array.<br>
-<pre><code class="language-html hljs language-xml">const myGirls = ["Cecilie", "Lone"];
+<pre><code class="language-js hljs language-xml">const myGirls = ["Cecilie", "Lone"];
 const myBoys = ["Emil", "Tobias", "Linus"];
 const myChildren = myGirls.concat(myBoys);
 
@@ -508,7 +411,7 @@ OUTPUT: Cecilie,Lone,Emil,Tobias,Linus
                                     <tr>
                                         <td>sort()</td>
                                         <td>it sorts an array alphabetically<br>
-<pre><code class="language-html hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.sort();
 
 OUTPUT: Apple,Banana,Mango,Orange
@@ -518,7 +421,7 @@ OUTPUT: Apple,Banana,Mango,Orange
                                     <tr>
                                         <td>reverse()</td>
                                         <td>it reverses the elements in an array.<br>
-<pre><code class="language-html hljs language-xml"><span class="text-muted">// Create and display an array:</span>
+<pre><code class="language-js hljs language-xml"><span class="text-muted">// Create and display an array:</span>
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 document.getElementById("demo1").innerHTML = fruits;                                            
 <span class="text-muted">// First sort the array</span>
@@ -539,7 +442,7 @@ Orange,Mango,Banana,Apple
                                         The map() method does not execute the function for array elements without values.<br>
                                         
                                         The map() method does not change the original array.<br>    
-<pre><code class="language-html hljs language-xml">const numbers1 = [45, 4, 9, 16, 25];
+<pre><code class="language-js hljs language-xml">const numbers1 = [45, 4, 9, 16, 25];
 const numbers2 = numbers1.map(myFunction);                                            
 function myFunction(value, index, array) {
 return value * 2;
@@ -552,7 +455,7 @@ OUTPUT:90,8,18,32,50
                                     <tr>
                                         <td>filter()</td>
                                         <td>It creates a new array with array elements that passes a test.<br>
-<pre><code class="language-html hljs language-xml">const numbers = [45, 4, 9, 16, 25];
+<pre><code class="language-js hljs language-xml">const numbers = [45, 4, 9, 16, 25];
 const over18 = numbers.filter(myFunction);                                            
 function myFunction(value, index, array) {
 return value > 18;
@@ -565,7 +468,7 @@ OUTPUT:45,25
                                     <tr>
                                         <td>every()</td>
                                         <td>It check if all array values pass a test.<br>
-<pre><code class="language-html hljs language-xml">const numbers = [45, 4, 9, 16, 25];
+<pre><code class="language-js hljs language-xml">const numbers = [45, 4, 9, 16, 25];
 let allOver18 = numbers.every(myFunction);
 
 document.getElementById("demo").innerHTML = "All over 18 is " + allOver18;
@@ -582,7 +485,7 @@ OUTPUT: All over 18 is false
                                     <tr>
                                         <td>some()</td>
                                         <td>It check if all array values pass a test.<br>
-<pre><code class="language-html hljs language-xml">const numbers = [45, 4, 9, 16, 25];
+<pre><code class="language-js hljs language-xml">const numbers = [45, 4, 9, 16, 25];
 let someOver18 = numbers.some(myFunction);
 
 document.getElementById("demo").innerHTML = "Some over 18 is " + someOver18;
@@ -599,7 +502,7 @@ OUTPUT: Some over 18 is true
                                     <tr>
                                         <td>indexOf()</td>
                                         <td>It searches an array for an element value and returns its position.<br>
-<pre><code class="language-html hljs language-xml">const fruits = ["Apple", "Orange", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Apple", "Orange", "Apple", "Mango"];
 let position = fruits.indexOf("Apple") + 1;
 
 document.getElementById("demo").innerHTML = "Apple is found in position " + position;
@@ -612,7 +515,7 @@ OUTPUT: Apple is found in position 1
                                     <tr>
                                         <td>lastIndexOf()</td>
                                         <td>same as Array.indexOf(), but returns the position of the last occurrence of the specified element.<br>
-<pre><code class="language-html hljs language-xml">const fruits = ["Apple", "Orange", "Apple", "Mango"];
+<pre><code class="language-js hljs language-xml">const fruits = ["Apple", "Orange", "Apple", "Mango"];
 let position = fruits.indexOf("Apple") + 1; 
 
 document.getElementById("demo").innerHTML = "Apple is found in position " + position;
@@ -625,7 +528,7 @@ OUTPUT: Apple is found in position 3
                                     <tr>
                                         <td>find()</td>
                                         <td>It returns the value of the first array element that passes a test function.<br>
-<pre><code class="language-html hljs language-xml">const numbers = [4, 9, 16, 25, 29];
+<pre><code class="language-js hljs language-xml">const numbers = [4, 9, 16, 25, 29];
 let first = numbers.find(myFunction);
 
 document.getElementById("demo").innerHTML = "First number over 18 is " + first;
@@ -641,7 +544,7 @@ OUTPUT: First number over 18 is 25
                                     <tr>
                                         <td>findIndex()</td>
                                         <td>It returns the index of the first array element that passes a test function.<br>
-<pre><code class="language-html hljs language-xml">const numbers = [4, 9, 16, 25, 29];
+<pre><code class="language-js hljs language-xml">const numbers = [4, 9, 16, 25, 29];
 
 document.getElementById("demo").innerHTML = "First number over 18 has index " + numbers.findIndex(myFunction);
 
@@ -669,7 +572,7 @@ OUTPUT: First number over 18 has index 3
                             <ul>
                             <li>we can use the Boolean() function to find out if an expression (or a variable) is true.</li>
                             <li>JavaScript has a Boolean data type. It can only take the values true or false.</li>
-<pre><code class="language-html hljs language-xml">document.getElementById("demo").innerHTML = Boolean(10 > 9);
+<pre><code class="language-js hljs language-xml">document.getElementById("demo").innerHTML = Boolean(10 > 9);
 OUTPUT: true
 </code></pre>
                             <li>Everything With a "Value" is True.</li>
@@ -779,7 +682,7 @@ OUTPUT: true
                                 <li>else - a block of code to be executed, if the same condition is false</li>
                                 <li>else if - a new condition to test, if the first condition is false</li>
                             </ul>
-<pre><code class="language-html hljs language-xml">if (condition1) {
+<pre><code class="language-js hljs language-xml">if (condition1) {
 <span class="text-muted">// block of code to be executed if condition1 is true</span>
 } else if (condition2) {
 <span class="text-muted">// block of code to be executed if the condition1 is false and condition2 is true</span>
@@ -789,7 +692,7 @@ OUTPUT: true
 </code></pre>
 <h3>Switch Statement</h3>
 <p>The switch statement is used to perform different actions based on different conditions.<br>Use the switch statement to select one of many code blocks to be executed.</p>
-<pre><code class="language-html hljs language-xml">switch(expression) {
+<pre><code class="language-js hljs language-xml">switch(expression) {
 case x:
 <span class="text-muted">// code block</span>
 break;
@@ -804,7 +707,7 @@ default:
 <p>it breaks out of the switch block.</p>
 <h6>default Keyword</h6>
 <p>it specifies the code to run if there is no case match.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 let text;
 switch (new Date().getDay()) {
 case 4:
@@ -826,7 +729,7 @@ OUTPUT: Soon it is Weekend
                             <h3>JavaScript For Loop</h3>
                             <p>Loops can execute a block of code a number of times.<br>
                             Loops are handy, if you want to run the same code over and over again, each time with a different value.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
 
 let text = "";
@@ -850,7 +753,7 @@ Audi
     <li>do/while - also loops through a block of code while a specified condition is true</li>
 </ul>
 <h6>JavaScript For In Loop</h6>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 const person = {fname:"John", lname:"Doe", age:25};
 
 let txt = "";
@@ -864,7 +767,7 @@ OUTPUT:John Doe 25
 </code></pre>
 <h6>forEach()</h6>
 <p>forEach() method calls a function (a callback function) once for each array element.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 const numbers = [45, 4, 9, 16, 25];
 
 let txt = "";
@@ -883,7 +786,7 @@ OUTPUT:
 </code></pre>
 <h6>While Loop</h6>
 <p>while loop loops through a block of code as long as a specified condition is true.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 let text = "";
 let i = 0;
 while (i < 10) { 
@@ -907,7 +810,7 @@ The number is 9
 <h6>Do While Loop</h6>
 <p>do while loop is a variant of the while loop. This loop will execute the code block once, before checking if the
 condition is true, then it will repeat the loop as long as the condition is true.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 let text = "";
 let i = 0;
 while (i < 5) { 
@@ -928,7 +831,7 @@ The number is 4
                             <h3>JavaScript Break and Continue</h3>
                             <p>The break statement "jumps out" of a loop.<br>
                             The continue statement "jumps over" one iteration in the loop.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 let text = "";
 for (let i = 0; i < 10; i++) { 
     if (i===3) { break; } 
@@ -944,7 +847,7 @@ The number is 2
 <h6>The Continue Statement</h6>
 <p>continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next
 iteration in the loop.</p>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 let text = "";
 for (let i = 0; i < 5; i++) { 
     if (i===3) { continue; } 
@@ -966,7 +869,7 @@ The number is 4
                         Iterables can be iterated over with for..of loops.<br>
                         It means looping over a sequence of elements.</p> 
                         <h6>Iterating Over a String</h6> 
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 <span class="text-muted">// Create a String</span>
 const name = "W3Schools";
 
@@ -990,7 +893,7 @@ l
 s
 </code></pre>
 <h6>Iterating Over an Array</h6>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 <span class="text-muted">// Create an Array</span>
 const letters = ["a","b","c"]; 
 
@@ -1008,7 +911,7 @@ b
 c
 </code></pre>
 <h6>Iterating Over an Set</h6>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 <span class="text-muted">// Create an Set</span>
 const letters = new Set([1,2,3]);
 
@@ -1026,7 +929,7 @@ OUTPUT:
 3
 </code></pre>
 <h6>Iterating Over a Map</h6>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 <span class="text-muted">// Create an Map</span>
 const fruits = new Map([
 ["apples", 500],
@@ -1094,7 +997,7 @@ oranges,200
                             <li>Create a new Set and use add() to add variables</li>
                         </ul>
                         <h5>new Set() Method</h5>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 <span class="text-muted">// Create a Set</span>
 const letters = new Set();
 
@@ -1116,7 +1019,7 @@ OUTPUT:
 </code></pre>
 
 <h5>The add() Method</h5>
-<pre><code class="language-html hljs language-xml">
+<pre><code class="language-js hljs language-xml">
 <span class="text-muted">// Create a new Set</span>
 const letters = new Set(["a","b","c"]);
 
@@ -1133,16 +1036,356 @@ OUTPUT:
 <p>Note: If you add equal elements, only the first will be saved. </p>
 
                         </div>
+                        <div id="item-13">
+                            <h3>JavaScript Maps</h3>
+                            <p>A Map holds key-value pairs where the keys can be any datatype.<br>
+                            
+                            A Map remembers the original insertion order of the keys.</p>
+                            <h6>How to Create a Map</h6>
+                            <ul>
+                                <li>Passing an Array to new Map()</li>
+                                <li>Create a Map and use Map.set()</li>
+                            </ul>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+const mapfruits = new Map([
+["apples", 500],
+["bananas", 300],
+["oranges", 200]
+]);
+
+document.write("OUTPUT: " + mapfruits.get("apples"));
+</script></code></pre>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+const mapgetfruits = new Map();
+
+// Set Map Values
+mapgetfruits.set("apples", 500);
+mapgetfruits.set("bananas", 300);
+mapgetfruits.set("oranges", 200);
+
+document.write("OUTPUT: "+ mapgetfruits.get("apples"));
+</script></code></pre>
+<p>Note: The set() method can also be used to change existing Map values:</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+const fruitsmapset = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+fruitsmapset.set("apples", 200);
+
+document.write("OUTPUT: " + fruitsmapset.get("apples"));
+</script></code></pre>
+<h6>The get() Method</h6>
+<p>It method gets the value of a key in a Map.</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+const vegtables = new Map([
+    ["carrot", 500],
+    ["beans", 300],
+    ["cabbage", 200]
+]);
+
+document.write("OUTPUT: " + vegtables.get("carrot"));
+</script></code></pre>
+<h6>The size Property</h6>
+<p>It property returns the number of elements in a Map.</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+    const sizevegtables = new Map([
+        ["carrot", 500],
+        ["beans", 300],
+        ["cabbage", 200]
+    ]);
+
+    document.write("OUTPUT: " + sizevegtables.size);
+</script></code></pre>
+<h6>The delete() Method</h6>
+<p>It removes a Map element.</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+    const delvegtables = new Map([
+        ["carrot", 500],
+        ["beans", 300],
+        ["cabbage", 200]
+    ]);
+    // Delete an Element
+    delvegtables.delete("carrot");
+    document.write("OUTPUT: " + delvegtables.size);
+</script></code></pre>
+<h6>The has() Method</h6>
+<p>It returns true if a key exists in a Map.</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+    const thasvegtables = new Map([
+        ["carrot", 500],
+        ["beans", 300],
+        ["cabbage", 200]
+    ]);
+    document.write("OUTPUT: " + thasvegtables.has("carrot"));
+</script></code></pre>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+    const fhasvegtables = new Map([
+        ["carrot", 500],
+        ["beans", 300],
+        ["cabbage", 200]
+    ]);
+    // Delete an Element
+    fhasvegtables.delete("carrot");
+    document.write("OUTPUT: " + fhasvegtables.has("carrot"));
+</script></code></pre>
+<h3>Differences between JavaScript Objects and Maps:</h3>
+<table class="table">
+    <tbody>
+        <tr>
+            <th> </th>
+            <th>Object</th>
+            <th>Map</th>
+        </tr>
+        <tr>
+            <td>Iterable</td>
+            <td>Not directly iterable</td>
+            <td>Directly iterable</td>
+        </tr>
+        <tr>
+            <td>Size</td>
+            <td>Do not have a size property</td>
+            <td>Have a size property</td>
+        </tr>
+        <tr>
+            <td>Key Types</td>
+            <td>Keys must be Strings (or Symbols)</td>
+            <td>Keys can be any datatype</td>
+        </tr>
+        <tr>
+            <td>Key Order</td>
+            <td>Keys are not well ordered</td>
+            <td>Keys are ordered by insertion</td>
+        </tr>
+        <tr>
+            <td>Defaults</td>
+            <td>Have default keys</td>
+            <td>Do not have default keys</td>
+        </tr>
+    </tbody>
+</table>
+<h6>The forEach() Method</h6>
+<p>It calls a function for each key/value pair in a Map.</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+    const forfruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200]
+    ]);
+
+    let fortext = "";
+    forfruits.forEach(function (value, key) {
+        fortext += key + ' = ' + value + "; "
+    })
+
+    document.write("OUTPUT: " + fortext);
+</script></code></pre>
+<h6>The entries() Method</h6>
+<p>It returns an iterator object with the [key, values] in a Map.</p>
+<pre><code class="language-js hljs language-xml"><script>// Create a Map
+const entriesfruits = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+let entext = "";
+for (const x of entriesfruits.entries()) {
+    entext += x + "; ";
+}
+
+document.write("OUTPUT: " + entext);
+</script></code></pre>
+                        </div>
+                        <div id="item-14">
+                        <h3>JavaScript typeof</h3>
+                        <p>In JavaScript there are 5 different data types that can contain values.</p>
+                        <ul>
+                            <li>string</li>
+                            <li>number</li>
+                            <li>boolean</li>
+                            <li>object</li>
+                            <li>function</li>
+                        </ul>
+                        <p>There are 6 types of objects.</p>
+                        <ul>
+                            <li>Object</li>
+                            <li>Date</li>
+                            <li>Array</li>
+                            <li>String</li>
+                            <li>Number</li>
+                            <li>Boolean</li>
+                        </ul>
+                        <p>And 2 data types that cannot contain values.</p>
+                        <ul>
+                            <li>null</li>
+                            <li>undefined</li>
+                        </ul>
+<pre><code class="language-js hljs language-xml"><script>document.write("OUTPUT: " +
+    typeof "john" + "; " +
+    typeof 3.14 + "; " +
+    typeof NaN + "; " +
+    typeof false + "; " +
+    typeof [1, 2, 3, 4] + "; " +
+    typeof { name: 'john', age: 34 } + "; " +
+    typeof new Date() + "; " +
+    typeof function () { } + "; " +
+    typeof myCar + "; " +
+    typeof null);
+</script></code></pre>
+<p>You cannot use typeof to determine if a JavaScript object is an array (or a date).</p>
+<h5>Primitive Data</h5>
+<p>A primitive data value is a single simple data value with no additional properties and methods.</p>
+<pre><code class="language-js hljs language-xml">
+typeof "John" // Returns "string"
+typeof 3.14 // Returns "number"
+typeof true // Returns "boolean"
+typeof false // Returns "boolean"
+typeof px // Returns "undefined" (if px has no value)
+</code></pre>
+<h5>Complex Data</h5>
+<p>The typeof operator can return one of two complex types:</p>
+<ul>
+    <li>function</li>
+    <li>object</li>
+</ul>
+<p>The typeof operator returns "object" for objects, arrays, and null.<br>
+
+The typeof operator does not return "object" for functions.</p>
+<pre><code class="language-js hljs language-xml">
+typeof {name:'John', age:34} // Returns "object"
+typeof [1,2,3,4] // Returns "object" (not "array", see note below)
+typeof null // Returns "object"
+typeof function myFunc(){} // Returns "function"
+</code></pre>
+<p>Note: The typeof operator returns "object" for arrays because in JavaScript arrays are objects.</p>
+                        </div>
+                        <div id="item-15">
+                        <h3>JavaScript Math Object</h3>
+                        <p>The JavaScript Math object allows you to perform mathematical tasks on numbers.<br>
+                        The Math object is static.<br>
+                    All methods and properties can be used without creating a Math object first.</p>
+                    <h5>Math Properties</h5>
+                    <p>The syntax for any Math property is : Math.property.<br>
+                    
+                    JavaScript provides 8 mathematical constants that can be accessed as Math properties:</p>
+<pre><code class="language-js hljs">Math.E // returns Euler's number
+Math.PI // returns PI
+Math.SQRT2 // returns the square root of 2
+Math.SQRT1_2 // returns the square root of 1/2
+Math.LN2 // returns the natural logarithm of 2
+Math.LN10 // returns the natural logarithm of 10
+Math.LOG2E // returns base 2 logarithm of E
+Math.LOG10E // returns base 10 logarithm of E</code></pre>
+<h5>Math Methods</h5>
+<p>The syntax for Math any methods is : Math.method(number)</p>
+<h6>Math.round()</h6>
+<p>Math.round(x) returns the nearest integer:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: "+ Math.round(4.6) + "; ");
+
+document.write("OUTPUT: " + Math.round(4.4) + "; ");
+
+document.write("OUTPUT: " + Math.round(4.5) + "; ");
+
+</script></code></pre>
+<h6>Math.ceil()</h6>
+<p>Math.ceil(x) returns the value of x rounded up to its nearest integer:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.ceil(4.9) + "; ");
+
+document.write("OUTPUT: " + Math.ceil(4.7) + "; ");
+
+document.write("OUTPUT: " + Math.ceil(4.2) + "; ");
+
+</script></code></pre>
+<h6>Math.floor()</h6>
+<p>Math.floor(x) returns the value of x rounded down to its nearest integer:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.floor(4.9) + "; ");
+
+document.write("OUTPUT: " + Math.floor(4.7) + "; ");
+
+document.write("OUTPUT: " + Math.floor(4.2) + "; ");
+
+</script></code></pre>
+<h6>Math.trunc()</h6>
+<p>Math.trunc(x) returns the integer part of x:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.trunc(4.9) + "; ");
+
+document.write("OUTPUT: " + Math.trunc(4.7) + "; ");
+
+document.write("OUTPUT: " + Math.trunc(4.2) + "; ");
+
+</script></code></pre>
+<h6>Math.sign()</h6>
+<p>Math.sign(x) returns if x is negative, null or positive:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.sign(4.2) + "; ");
+
+document.write("OUTPUT: " + Math.sign(0) + "; ");
+
+document.write("OUTPUT: " + Math.sign(-4.2) + "; ");
+
+</script></code></pre>
+<h6>Math.pow()</h6>
+<p>Math.pow(x, y) returns the value of x to the power of y:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.pow(8, 2));
+
+</script></code></pre>
+<h6>Math.sqrt()</h6>
+<p>Math.sqrt(x) returns the square root of x:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.sqrt(81));
+
+</script></code></pre>
+<h6>Math.abs()</h6>
+<p>Math.abs(x) returns the absolute (positive) value of x:</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT: " + Math.abs(-31));
+
+</script></code></pre>
+<h6>Math.sin()</h6>
+<p>Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).<br>
+
+If you want to use degrees instead of radians, you have to convert degrees to radians:<br>
+
+Angle in radians = Angle in degrees x PI / 180.</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT:" + "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180));
+
+</script></code></pre>
+<h6>Math.cos()</h6>
+<p>Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x (given in radians).<br>
+
+If you want to use degrees instead of radians, you have to convert degrees to radians:<br>
+
+Angle in radians = Angle in degrees x PI / 180.</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT:" + "The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180));
+
+</script></code></pre>
+<h6>Math.min()</h6>
+<p>Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments.</p>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT:" + Math.min(0, 150, 30, 20, -8, -200));
+
+</script></code></pre>
+<pre><code class="language-js hljs"><script>document.write("OUTPUT:" + Math.max(0, 150, 30, 20, -8, -200));
+
+</script></code></pre>
+                        </div>
+                        <div id="item-16">
+                        <h3>JavaScript Random</h3>
+                        <p>Math.random() returns a random number between 0 (inclusive), and 1 (exclusive).<br>
+                        Math.random() always returns a number lower than 1.</p>
+<pre><code class="language-js hljs"><script>document.write(Math.random());
+</script></code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-        <!-- and it's easy to individually load additional languages -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/go.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+            <script>hljs.highlightAll();</script>
 </body>
 
 </html>
