@@ -44,6 +44,8 @@
                         <a class="nav-link" href="#item-20">Strict Mode</a>
                         <a class="nav-link" href="#item-21">this Keyword</a>
                         <a class="nav-link" href="#item-22">Arrow Function</a>
+                        <a class="nav-link" href="#item-23">Classes</a>
+                        <a class="nav-link" href="#item-24">Modules</a>
                     </nav>
                 </nav>
             </div>
@@ -1698,6 +1700,78 @@ hello2 = () => "Hello World!";
 
 document.write("OUTPUT: " + hello2());
 </script></code></pre>
+<pre><code><script>//If you have parameters, you pass them inside the parentheses.
+    var hello3;
+
+        hello3 = (val) => "Hello " + val;
+
+        document.write("OUTPUT: " + hello3("Universe!"));
+</script></code></pre>
+<pre><code><script>// if you have only one parameter, you can skip the parentheses as well.
+    var hello4;
+
+    hello4 = val => "Hello " + val;
+
+    document.write("OUTPUT: " + hello4("Universe!"));
+</script></code></pre>
+                        </div>
+                        <div id="item-23">
+                          <h3>JavaScript Classes</h3>
+                          <p>JavaScript Classes are templates for JavaScript Objects.<br>
+                            Use the keyword class to create a class.</p>
+<pre><code class="language-js hljs"><script>class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+        }
+    }
+
+const myCar = new Car("Ford", 2014);
+document.write("OUTPUT: " + myCar.name + " " + myCar.year);
+</script></code></pre>
+                        </div>
+                        <div id="item-24">
+                          <h3>JavaScript Modules</h3> 
+                          <p>JavaScript modules allow you to break up your code into separate files.<br>
+                        
+                        This makes it easier to maintain the code-base.<br>
+                        
+                        JavaScript modules rely on the import and export statements.</p>
+                        <h5>Export</h5>
+                        <p>We can export a function or variable from any file.<br>
+                        There are two types of exports: Named and Default.</p>
+<h6>Named Exports</h6>
+<p>You can create named exports two ways. In-line individually, or all at once at the bottom.</p>
+<pre><code class="language-js hljs">//In-line individually
+export const name = "Jesse";
+export const age = 40;
+</code></pre>
+<pre><code class="language-js hljs">//All at once at the bottom
+const name = "Jesse";
+const age = 40;
+    
+export {name, age};
+</code></pre>
+<h6>Default Exports</h6>
+<p>You can only have one default export in a file.</p>
+<pre><code class="language-js hljs">const message = () => {
+const name = "Jesse";
+const age = 40;
+return name + ' is ' + age + 'years old.';
+};
+
+export default message;
+</code></pre>
+<h5>Import</h5>
+<p>You can import modules into a file in two ways, based on if they are named exports or default exports.<br>
+
+Named exports are constructed using curly braces. Default exports are not.</p>
+<pre><code class="language-js hljs">//Import from named exports
+import { name, age } from "./person.js";
+</code></pre>
+<pre><code class="language-js hljs">//Import from default exports
+import message from "./message.js";
+</code></pre>
                         </div>
                     </div>
                 </div>
