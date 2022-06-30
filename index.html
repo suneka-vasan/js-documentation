@@ -38,6 +38,12 @@
                         <a class="nav-link" href="#item-14">Typeof</a>
                         <a class="nav-link" href="#item-15">Math</a>
                         <a class="nav-link" href="#item-16">Random</a>
+                        <a class="nav-link" href="#item-17">Regular Expressions</a>
+                        <a class="nav-link" href="#item-18">Errors</a>
+                        <a class="nav-link" href="#item-19">Scope</a>
+                        <a class="nav-link" href="#item-20">Strict Mode</a>
+                        <a class="nav-link" href="#item-21">this Keyword</a>
+                        <a class="nav-link" href="#item-22">Arrow Function</a>
                     </nav>
                 </nav>
             </div>
@@ -707,42 +713,36 @@ default:
 <p>it breaks out of the switch block.</p>
 <h6>default Keyword</h6>
 <p>it specifies the code to run if there is no case match.</p>
-<pre><code class="language-js hljs language-xml">
+<pre><code class="language-js hljs language-xml"><script>
 let text;
 switch (new Date().getDay()) {
 case 4:
 case 5:
-text = "Soon it is Weekend";
+    breaktext = "Soon it is Weekend";
 break;
 case 0:
 case 6:
-text = "It is Weekend";
+    breaktext = "It is Weekend";
 break;
 default:
-text = "Looking forward to the Weekend";
+    breaktext = "Looking forward to the Weekend";
 }
-document.getElementById("demo").innerHTML = text;
-OUTPUT: Soon it is Weekend
-</code></pre>
+document.write("OUTPUT:" + breaktext);
+</script></code></pre>
                         </div>
                         <div id="item-9">
                             <h3>JavaScript For Loop</h3>
                             <p>Loops can execute a block of code a number of times.<br>
                             Loops are handy, if you want to run the same code over and over again, each time with a different value.</p>
-<pre><code class="language-js hljs language-xml">
-const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+<pre><code class="language-js hljs language-xml"><script>const loopcars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
 
-let text = "";
-for (let i = 0; i < cars.length; i++) { text +=cars[i] + "&lt;br&gt;" ; } 
-document.getElementById("demo").innerHTML=text;
+let looptext = "";
+for (let i = 0; i < loopcars.length; i++) { 
+    looptext += loopcars[i] + "; " ; 
+} 
 
-OUTPUT: 
-BMW
-Volvo
-Saab
-Ford
-Fiat
-Audi
+document.write("OUTPUT:" + looptext);
+</script>
 </code></pre>
 <h5>Different Kinds of Loops</h5>
 <ul>
@@ -753,59 +753,39 @@ Audi
     <li>do/while - also loops through a block of code while a specified condition is true</li>
 </ul>
 <h6>JavaScript For In Loop</h6>
-<pre><code class="language-js hljs language-xml">
-const person = {fname:"John", lname:"Doe", age:25};
+<pre><code class="language-js hljs language-xml"><script>const loopperson = {fname:"John", lname:"Doe", age:25};
 
-let txt = "";
-for (let x in person) {
-txt += person[x] + " ";
+let looptxt1 = "";
+for (let x in loopperson) {
+    looptxt1 += loopperson[x] + " ";
 }
 
-document.getElementById("demo").innerHTML = txt;
-
-OUTPUT:John Doe 25
+document.write("OUTPUT:" +looptxt1);
+</script>
 </code></pre>
 <h6>forEach()</h6>
 <p>forEach() method calls a function (a callback function) once for each array element.</p>
-<pre><code class="language-js hljs language-xml">
-const numbers = [45, 4, 9, 16, 25];
+<pre><code class="language-js hljs language-xml"><script>const fornumbers = [45, 4, 9, 16, 25];
 
-let txt = "";
-numbers.forEach(myFunction);
-document.getElementById("demo").innerHTML = txt;
+let fortxt = "";
+    fornumbers.forEach(myFunction);
+document.write(fortxt);
 
 function myFunction(value, index, array) {
-txt += value + "&lt;br&gt;";
+    fortxt += value + "; ";
 }
-OUTPUT:
-45
-4
-9
-16
-25
+</script>
 </code></pre>
 <h6>While Loop</h6>
 <p>while loop loops through a block of code as long as a specified condition is true.</p>
-<pre><code class="language-js hljs language-xml">
-let text = "";
-let i = 0;
-while (i < 10) { 
-    text +="&lt;br&gt;The number is " + i; 
-    i++; 
-} 
-document.getElementById("demo").innerHTML=text;
-
-OUTPUT:
-The number is 0
-The number is 1
-The number is 2
-The number is 3
-The number is 4
-The number is 5
-The number is 6
-The number is 7
-The number is 8
-The number is 9
+<pre><code class="language-js hljs language-xml"><script>let whiletext = "";
+let wi = 0;
+while (wi < 5) { 
+    whiletext +="The number is " + wi + "; "; 
+    wi++; 
+}
+document.write(whiletext);
+</script>
 </code></pre>
 <h6>Do While Loop</h6>
 <p>do while loop is a variant of the while loop. This loop will execute the code block once, before checking if the
@@ -823,7 +803,7 @@ OUTPUT:
 The number is 0
 The number is 1
 The number is 2
-The number is 3
+The number is 3   
 The number is 4
 </code></pre>
                         </div>
@@ -1373,6 +1353,350 @@ Angle in radians = Angle in degrees x PI / 180.</p>
                         <p>Math.random() returns a random number between 0 (inclusive), and 1 (exclusive).<br>
                         Math.random() always returns a number lower than 1.</p>
 <pre><code class="language-js hljs"><script>document.write(Math.random());
+</script></code></pre>
+                        </div>
+                        <div id="item-17">
+                        <h3>JavaScript Regular Expressions</h3> 
+                        <p>A regular expression is a sequence of characters that forms a search pattern.<br>
+                        The search pattern can be used for text search and text replace operations.<br>
+                        When you search for data in a text, you can use this search pattern to describe what you are searching for.<br>
+                        A regular expression can be a single character, or a more complicated pattern.</p>
+<h6>Using String search() With a String</h6>
+<p>The search() method searches a string for a specified value and returns the position of the match.</p>
+<pre><code class="language-js hljs"><script>let searchtext = "Visit W3Schools!";
+let sn = searchtext.search("W3Schools");
+document.write("OUTPUT: " + sn);
+</script></code></pre>
+<h6>Using String search() With a Regular Expression</h6>
+<p>Use a regular expression to do a case-insensitive search for "w3schools" in a string.</p>
+<pre><code class="language-js hljs"><script>let searchtext1 = "Visit W3Schools!";
+let sn1 = searchtext1.search(/w3schools/i);
+document.write("OUTPUT: " + sn1);
+</script></code></pre>
+<h6>Using String replace() With a String</h6>
+<p>The replace() method replaces a specified value with another value in a string.</p>
+<pre><code class="language-js hljs"><script>let replacetext = "Visit W3Schools!";
+let rn = replacetext.replace("Microsoft", "W3Schools");
+document.write("OUTPUT: " + rn);
+</script></code></pre>
+<h6>Using String search() With a Regular Expression</h6>
+<p>Use a regular expression to do a case-insensitive search for "w3schools" in a string.</p>
+<pre><code class="language-js hljs"><script>let replacetext1 = "Visit W3Schools!";
+let rn1 = replacetext1.replace(/microsoft/i, "W3Schools");
+document.write("OUTPUT: " + rn1);
+</script></code></pre>
+<p>Note: Regular expression arguments (instead of string arguments) can be used in the methods above.<br>
+Regular expressions can make your search much more powerful (case insensitive for example).</p>
+<h4>Regular Expression Modifiers</h4>
+<p>Modifiers can be used to perform case-insensitive more global searches.</p>
+<h6>i - case-insensitive matching</h6>
+<pre><code class="language-js hljs"><script>let casetext = "Visit W3Schools";
+    let caseresult = casetext.match(/w3schools/i);
+    document.write("OUTPUT: " + caseresult);
+</script></code></pre>
+<h6>g - global match</h6>
+<pre><code class="language-js hljs"><script>let globaltext = "Is this all there is?";
+    let globalresult = globaltext.match(/is/g);
+    document.write("Result is: " + globalresult);
+</script></code></pre>
+<h6>m - multiline matching</h6>
+<pre><code class="language-js hljs"><script>let multitext = "\nIs th\nis it?";
+let multiresult = multitext.match(/^is/m);
+document.write("Result is: " + multiresult);
+</script></code></pre>
+<h4>Regular Expression Patterns</h4>
+<p>Brackets are used to find a range of characters.</p>
+<h6>[abc] - Find any of the characters between the brackets</h6>
+<pre><code class="language-js hljs"><script>let sbtext = "Is this all there is?";
+    let sbresult = sbtext.match(/[h]/g);
+    document.write("OUTPUT: " + sbresult);
+</script></code></pre>
+<h6>[0-9] - Find any of the digits between the brackets</h6>
+<pre><code class="language-js hljs"><script>let sbtext1 = "123456789";
+    let sbresult1 = sbtext1.match(/[1-4]/g);
+    document.write("Result is: " + sbresult1);
+</script></code></pre>
+<h6>(x|y) - Find any of the alternatives separated with |</h6>
+<pre><code class="language-js hljs"><script>let cbtext = "re, green, red, green, gren, gr, blue, yellow";
+    let cbresult = cbtext.match(/(red|green)/g);
+    document.write("Result is: " + cbresult);
+</script></code></pre>
+<h5><strong>Metacharacters</strong> are characters with a special meaning:</h5>
+<h6>\d - Find a digit</h6>
+<pre><code class="language-js hljs"><script>let dtext = "Give 100%!"; 
+    let dresult = dtext.match(/\d/g);
+    document.write("OUTPUT: " + dresult);
+</script></code></pre>
+<h6>\s - Find a whitespace character</h6>
+<pre><code class="language-js hljs"><script>let sftext = "Is this all there is?";
+    let sfresult = sftext.match(/\s/g);
+    document.write("Result is: " + sfresult);
+</script></code></pre>
+<h6>\b - Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b</h6>
+<pre><code class="language-js hljs"><script>let bftext = "HELLO, LOOK AT YOU!"; 
+    let bfresult = bftext.search(/LO\b/);
+    document.write("Result is: " + bfresult);
+</script></code></pre>
+<h6>\uxxxx - Find the Unicode character specified by the hexadecimal number xxxx</h6>
+<pre><code class="language-js hljs"><script>let uftext = "Visit W3Schools. Hello World!"; 
+    let ufresult = uftext.match(/\u0057/g);
+    document.write("Result is: " + ufresult);
+</script></code></pre>
+<h6>Using test()</h6>
+<p>The test() method is a RegExp expression method.<br>
+It searches a string for a pattern, and returns true or false, depending on the result.</p>
+<pre><code class="language-js hljs language-html"><script>const pattern = /e/.test("The best things in life are free!");
+document.write("OUTPUT: " + pattern);
+</script></code></pre>
+<h6>Using exec()</h6>
+<p>The exec() method is a RegExp expression method.<br>
+
+It searches a string for a specified pattern, and returns the found text as an object.<br>
+
+If no match is found, it returns an empty (null) object.</p>
+<pre><code class="language-js hljs language-html"><script>const execpattern = /e/.exec("The best things in life are free!");
+document.write("OUTPUT: " + "Found " + execpattern[0] + " in position " + execpattern.index + " in the text: " + execpattern.input);
+</script></code></pre>
+                        </div>
+                        <div id="item-18">
+                        <h3>JavaScript Errors</h3>
+                        <p>When executing JavaScript code, different errors can occur.<br>
+                        
+                        Errors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things.</p>
+                        <h6>Throw, and Try...Catch...Finally</h6>
+                        <ul>
+                            <li>The try statement defines a code block to run (to try).</li>
+                            <li>The catch statement defines a code block to handle any error.</li>
+                            <li>The finally statement defines a code block to run regardless of the result.</li>
+                            <li>The throw statement defines a custom error.</li>
+                        </ul>
+<h6>JavaScript try and catch</h6>
+<pre><code class="language-js hljs language-html"><p id="trydemo"></p>
+<script>
+try {
+    adddlert("Welcome guest!");
+}
+catch (err) {
+    document.getElementById("trydemo").innerHTML = err.message;
+}
+</script></code></pre>
+<h6>JavaScript Throws Errors</h6>
+<p>When an error occurs, JavaScript will normally stop and generate an error message.<br>
+The technical term for this is: JavaScript will throw an exception (throw an error).<br>
+The throw statement allows you to create a custom error.<br>
+The exception can be a JavaScript String, a Number, a Boolean or an Object:</p>
+<input id="errdemo" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="ep01"></p>
+<pre><code class="language-js hljs"><script>function myFunction() {
+const message = document.getElementById("ep01");
+message.innerHTML = "";
+let x = document.getElementById("errdemo").value;
+try {
+        if (x == "") throw "empty";
+        if (isNaN(x)) throw "not a number";
+        x = Number(x);
+        if (x < 5) throw "too low";
+        if (x > 10) throw "too high";
+    }
+        catch (err) {
+            message.innerHTML = "Input is " + err;
+        }
+    }
+</script></code></pre>
+<h6>Error Name Values</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col-1">Error Name </th>
+            <th scope="col-1">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>EvalError</td>
+            <td>An error has occurred in the eval() function<br>
+            Note: Newer versions of JavaScript do not throw EvalError. Use SyntaxError instead.</td>
+        </tr>
+        <tr>
+            <td>RangeError</td>
+            <td>A number "out of range" has occurred</td>
+        </tr>
+        <tr>
+            <td>ReferenceError</td>
+            <td>An illegal reference has occurred</td>
+        </tr>
+        <tr>
+            <td>SyntaxError</td>
+            <td>A syntax error has occurred</td>
+        </tr>
+        <tr>
+            <td>TypeError</td>
+            <td>A type error has occurred</td>
+        </tr>
+        <tr>
+            <tr>URIError</tr>
+            <tr>An error in encodeURI() has occurred</tr>
+        </tr>
+    </tbody>
+</table>
+                        </div>
+                        <div id="item-19">
+                           <h3>JavaScript Scope</h3> 
+                           <p>Scope determines the accessibility (visibility) of variables.<br>
+                        
+                        JavaScript has 3 types of scope:</p>
+                        <ul>
+                            <li>Block scope</li>
+                            <li>Function scope</li>
+                            <li>Global scope</li>
+                        </ul>
+                        <h6>Block Scope</h6>
+                        <p>Before ES6 (2015), JavaScript had only Global Scope and Function Scope.<br>
+                        
+                        ES6 introduced two important new JavaScript keywords: let and const.<br>
+                        
+                        These two keywords provide Block Scope in JavaScript.<br>
+                        
+                        Variables declared inside a { } block cannot be accessed from outside the block.<br>
+                    
+                    Variables declared with the var keyword can NOT have block scope.
+                    
+                    Variables declared inside a { } block can be accessed from outside the block.</p>
+<pre><code class="language-js hljs">{
+let x = 2;
+}
+// x can NOT be used here
+</code></pre>
+<pre><code class="language-js hljs">{
+var x = 2;
+}
+// x can NOT be used here
+</code></pre>
+<h6>Local Scope</h6>
+<p>Variables declared within a JavaScript function, become LOCAL to the function.</p>
+<pre><code class="language-js hljs">// code here can NOT use carName
+    
+function myFunction() {
+let carName = "Volvo";
+// code here CAN use carName
+}
+    
+// code here can NOT use carName
+</code></pre>
+<h6>Function Scope</h6>
+<p>JavaScript has function scope: Each function creates a new scope.<br>
+
+Variables defined inside a function are not accessible (visible) from outside the function.<br>
+
+Variables declared with var, let and const are quite similar when declared inside a function. They all have Function Scope.</p>
+<pre><code class="language-js hljs">function myFunction() {
+var carName = "Volvo"; // Function Scope
+}
+</code></pre>
+<pre><code class="language-js hljs">function myFunction() {
+let carName = "Volvo"; // Function Scope
+}
+</code></pre>
+<pre><code class="language-js hljs">function myFunction() {
+const carName = "Volvo"; // Function Scope
+}
+</code></pre>
+<h6>Global JavaScript Variables</h6>
+<p>A variable declared outside a function, becomes GLOBAL.</p>
+<pre><code class="language-js hljs">let carName = "Volvo";
+// code here can use carName
+
+function myFunction() {
+// code here can also use carName
+}
+</code></pre>
+<p>A global variable has Global Scope.<br>
+
+All scripts and functions on a web page can access it.</p>
+<h6>Global Scope</h6>
+<p>Variables declared Globally (outside any function) have Global Scope.<br>
+
+Global variables can be accessed from anywhere in a JavaScript program.<br>
+
+Variables declared with var, let and const are quite similar when declared outside a block.<br>
+
+They all have Global Scope.</p>
+<pre><code class="language-js hljs">var x = 2; // Global scope
+
+let x = 2; // Global scope
+
+const x = 2; // Global scope
+</code></pre>
+                        </div>
+                        <div id="item-20">
+                        <h3>JavaScript Use Strict</h3>
+                        <ul>    
+                        <li>"use strict"; Defines that JavaScript code should be executed in "strict mode".
+                        Strict mode makes it easier to write "secure" JavaScript.</li>
+                        <li>Strict mode changes previously accepted "bad syntax" into real errors.</li>
+                        <li>As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will
+                        throw an error, making it impossible to accidentally create a global variable.</li>
+                        <li>In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.</li>
+                        <li>In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a
+                        non-existing variable, or a non-existing object, will throw an error.</li>
+                        </ul>
+                        <h6>Using a variable, without declaring it, is not allowed in Strict Mode.</h6>
+                        </div>
+                        <div id="item-21">
+                           <h3>The JavaScript this Keyword</h3> 
+                           <ul>
+                            <li>In JavaScript, the this keyword refers to an object.</li>
+                            <li>Which object depends on how this is being invoked (used or called).</li>
+                            <li>The this keyword refers to different objects depending on how it is used.</li>
+                            <li>In an object method, this refers to the object.</li>
+                            <li>Alone, this refers to the global object.</li>
+                            <li>In a function, this refers to the global object.</li>
+                            <li>In a function, in strict mode, this is undefined.</li>
+                            <li>In an event, this refers to the element that received the event.</li>
+                            <li>Methods like call(), apply(), and bind() can refer this to any object.</li>
+                            <li>this is not a variable. It is a keyword. You cannot change the value of this.</li>
+                           </ul>
+<pre><code class="language-js hljs"><script>// Create an object:
+const tperson = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+// Display data from the object:
+document.write("OUTPUT: " + tperson.fullName());
+    
+</script></code></pre>
+                        </div>
+                        <div id="item-22">
+                        <h3>JavaScript Arrow Function</h3>
+                        <p>Arrow functions allow us to write shorter function syntax.</p>
+<pre><code><script>var hello;
+
+hello = function () {
+    return "Hello World!";
+}
+
+document.write("OUTPUT: " + hello());
+</script></code></pre>
+<pre><code><script>var hello1;
+
+    hello1 = () => {
+        return "Hello World!";
+    }
+
+    document.write("OUTPUT: " + hello1());
+</script></code></pre>
+<pre><code><script>//Arrow Functions Return Value by Default (This works only if the function has only one statement).
+var hello2;
+
+hello2 = () => "Hello World!";
+
+document.write("OUTPUT: " + hello2());
 </script></code></pre>
                         </div>
                     </div>
