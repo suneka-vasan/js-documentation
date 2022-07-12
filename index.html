@@ -1773,6 +1773,47 @@ import { name, age } from "./person.js";
 import message from "./message.js";
 </code></pre>
                         </div>
+                        <div>
+                            <h3>Destructuring assignment</h3>
+                            <p>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or
+                            properties from objects, into distinct variables.</p>
+<pre><code class="language-js hljs"><script>
+let age = 26
+let child = age<=7
+let sernior = age>=65
+document.write(child);
+document.write(sernior);
+</script>
+</code></pre>
+<pre><code class="language-js hljs"><script>
+let ifage = 26
+if (ifage<=7){
+    document.write("I am a child");
+}
+else if(ifage >= 65){
+    document.write("I am a senior");
+}
+else{
+    document.write("I am a middle man");
+}
+</script>
+</code></pre>
+<h3>Logical And Or Operator</h3>
+<p>Logical And Operator - True if both sides are true. False otherwise.</p>
+<p>Logical Or Operator - True if at least one side is true. False otherwise.</p>
+<pre><code class="language-js hljs"><script>
+let guestOnevegan = true;
+let guestTwovegan = false;
+if (guestOnevegan && guestTwovegan){
+    document.write("Only offer up vegan dishes.");
+} else if (guestOnevegan || guestTwovegan){
+    document.write("Make sure to offer up some vegan dishes.");
+} else{
+    document.write("Offer up anything on the menu.");
+}
+</script>
+</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
